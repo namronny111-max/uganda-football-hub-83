@@ -8,60 +8,60 @@ All colors MUST be HSL. Inspired by Ugandan flag colors with dark sophisticated 
 
 @layer base {
   :root {
-    /* Core Brand Colors - Dark sophisticated base */
-    --background: 222 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Core Brand Colors - Light sophisticated base */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
 
     /* Card and Surface Colors */
-    --card: 220 32% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
 
-    --popover: 220 32% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
 
     /* Primary - Ugandan Red (from flag) */
     --primary: 0 84% 55%;
     --primary-foreground: 210 40% 98%;
     --primary-glow: 0 100% 70%;
 
-    /* Secondary - Sophisticated dark variant */
-    --secondary: 220 32% 15%;
-    --secondary-foreground: 210 40% 98%;
+    /* Secondary - Light variant */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 240 10% 3.9%;
 
     /* Ugandan Yellow (from flag) */
     --accent: 45 98% 55%;
-    --accent-foreground: 220 32% 8%;
+    --accent-foreground: 240 10% 3.9%;
     --accent-glow: 45 100% 65%;
 
     /* Muted colors for subtle elements */
-    --muted: 220 32% 12%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 16% 47%;
 
     /* Success and status colors */
     --success: 120 60% 50%;
     --success-foreground: 210 40% 98%;
 
     --warning: 45 98% 55%;
-    --warning-foreground: 220 32% 8%;
+    --warning-foreground: 240 10% 3.9%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
     /* Border and input colors */
-    --border: 220 32% 15%;
-    --input: 220 32% 15%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
     --ring: 0 84% 55%;
 
     /* Gradients for modern appeal */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(220 32% 8%));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(220 25% 10%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100% / 0.8), hsl(0 0% 100% / 0.9)), linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--accent) / 0.1));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(0 0% 98%));
 
     /* Shadows with African warmth */
     --shadow-primary: 0 10px 30px -10px hsl(var(--primary) / 0.4);
     --shadow-accent: 0 10px 30px -10px hsl(var(--accent) / 0.3);
-    --shadow-elegant: 0 20px 40px -15px hsl(220 32% 4% / 0.6);
+    --shadow-elegant: 0 20px 40px -15px hsl(220 32% 4% / 0.1);
     --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.2);
 
     /* Animation and transitions */
