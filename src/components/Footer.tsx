@@ -33,7 +33,7 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-background via-card to-background border-t border-border">
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto py-12">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
           {/* Logo and Description */}
           <div className="space-y-4">
@@ -167,7 +167,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-border bg-muted/30">
-        <div className="container mx-auto px-4 py-6">
+        <div className="container mx-auto py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-muted-foreground text-center md:text-left">
               <p>&copy; 2025 Uganda Premier League. All rights reserved.</p>

@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto">
         {/* Top social bar */}
         <div className="hidden md:flex items-center justify-between py-2 text-sm border-b border-border/50">
           <div className="flex items-center space-x-4 text-muted-foreground">

@@ -121,7 +121,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="grid lg:grid-cols-3 gap-8 items-center">
           {/* Main Hero Content */}
           <div className="lg:col-span-2 space-y-6 animate-fade-in">

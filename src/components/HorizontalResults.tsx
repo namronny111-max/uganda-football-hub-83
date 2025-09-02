@@ -41,7 +41,7 @@ const HorizontalResults = () => {
 
   return (
     <div className="bg-muted/30 border-b border-border">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="flex items-center py-3">
           <div className="flex items-center space-x-2 mr-6">
             <h3 className="text-sm font-semibold font-display">Latest Results</h3>
