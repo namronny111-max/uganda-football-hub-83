@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import heroImage from "@/assets/upl-hero-main.jpg";
+import HorizontalResults from "@/components/HorizontalResults";
 
 interface NewsSlide {
   id: number;
@@ -108,7 +109,9 @@ const HeroSection = () => {
   const currentNews = newsSlides[currentSlide];
 
   return (
-    <section className="relative min-h-[70vh] lg:min-h-[80vh] flex items-center">
+    <section className="relative">
+      <HorizontalResults />
+      <div className="relative min-h-[70vh] lg:min-h-[80vh] flex items-center">
       {/* Hero Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -243,6 +246,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

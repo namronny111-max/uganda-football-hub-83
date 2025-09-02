@@ -136,6 +136,10 @@ export default {
 						transform: 'translateY(-5px)',
 						animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
 					}
+				},
+				'scroll-horizontal': {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-50%)' }
 				}
 			},
 			animation: {
@@ -146,7 +150,8 @@ export default {
 				'scale-in': 'scale-in 0.3s ease-out',
 				'slide-in-right': 'slide-in-right 0.4s ease-out',
 				'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
-				'bounce-subtle': 'bounce-subtle 2s infinite'
+				'bounce-subtle': 'bounce-subtle 2s infinite',
+				'scroll-horizontal': 'scroll-horizontal 20s linear infinite'
 			},
 			transitionTimingFunction: {
 				'bounce': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
