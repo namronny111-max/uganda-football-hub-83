@@ -4,6 +4,7 @@ import { Menu, X, Search, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import uplLogo from "@/assets/upl-logo.png";
+import FloatingResults from "@/components/FloatingResults";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,8 +22,9 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4">
+    <>
+      <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container mx-auto px-4">
         {/* Top social bar */}
         <div className="hidden md:flex items-center justify-between py-2 text-sm border-b border-border/50">
           <div className="flex items-center space-x-4 text-muted-foreground">
@@ -116,8 +118,10 @@ const Header = () => {
             </nav>
           </div>
         )}
-      </div>
-    </header>
+        </div>
+      </header>
+      <FloatingResults />
+    </>
   );
 };
 

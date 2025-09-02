@@ -127,10 +127,6 @@ export default {
 						boxShadow: '0 0 40px hsl(var(--primary) / 0.6), 0 0 60px hsl(var(--accent) / 0.3)'
 					}
 				},
-				'scroll-horizontal': {
-					'0%': { transform: 'translateX(100%)' },
-					'100%': { transform: 'translateX(-100%)' }
-				},
 				'bounce-subtle': {
 					'0%, 100%': { 
 						transform: 'translateY(0)',
@@ -149,7 +145,6 @@ export default {
 				'fade-out': 'fade-out 0.3s ease-out',
 				'scale-in': 'scale-in 0.3s ease-out',
 				'slide-in-right': 'slide-in-right 0.4s ease-out',
-				'scroll-horizontal': 'scroll-horizontal 30s linear infinite',
 				'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
 				'bounce-subtle': 'bounce-subtle 2s infinite'
 			},
