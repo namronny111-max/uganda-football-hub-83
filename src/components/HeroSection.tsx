@@ -139,23 +139,23 @@ const HeroSection = () => {
 
             {/* Main Headlines */}
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-tight">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold font-display leading-tight">
                 <span className="text-gradient-primary">{currentNews.title}</span>
               </h1>
-              <h2 className="text-xl md:text-2xl text-accent font-semibold">
+              <h2 className="text-lg md:text-xl text-accent font-semibold">
                 {currentNews.subtitle}
               </h2>
-              <p className="text-lg text-foreground/90 max-w-2xl leading-relaxed">
+              <p className="text-base text-foreground/90 max-w-2xl leading-relaxed">
                 {currentNews.description}
               </p>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button className="btn-hero">
+            <div className="flex flex-col sm:flex-row gap-3 pt-3">
+              <Button size="sm" className="btn-hero">
                 Read Full Story
               </Button>
-              <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
+              <Button variant="outline" size="sm" className="border-primary text-primary hover:bg-primary/10">
                 Watch Highlights
               </Button>
             </div>
@@ -200,8 +200,8 @@ const HeroSection = () => {
           {/* Upcoming Fixtures Sidebar */}
           <div className="space-y-4">
             <div className="card-uganda p-6 space-y-4">
-              <h3 className="text-xl font-bold font-display text-gradient-accent flex items-center">
-                <Calendar className="h-5 w-5 mr-2" />
+              <h3 className="text-lg font-bold font-display text-gradient-accent flex items-center">
+                <Calendar className="h-4 w-4 mr-2" />
                 Upcoming Fixtures
               </h3>
               

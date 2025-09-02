@@ -24,7 +24,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto">
         {/* Top social bar */}
-        <div className="hidden md:flex items-center justify-between py-2 text-sm border-b border-border/50">
+        <div className="flex items-center justify-between py-2 text-xs border-b border-border/50">
           <div className="flex items-center space-x-4 text-muted-foreground">
             <span>Follow UPL:</span>
             <div className="flex space-x-2">
@@ -51,7 +51,7 @@ const Header = () => {
           <Link to="/" className="flex items-center space-x-3">
             <img src={uplLogo} alt="UPL Logo" className="h-12 w-12" />
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold font-display text-gradient-primary">
+              <h1 className="text-lg font-bold font-display text-gradient-primary">
                 Uganda Premier League
               </h1>
               <p className="text-xs text-muted-foreground">StarTimes Uganda Premier League</p>

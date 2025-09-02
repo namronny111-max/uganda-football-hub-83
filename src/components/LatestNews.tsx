@@ -107,10 +107,10 @@ const LatestNews = () => {
     <section className="py-12 bg-gradient-to-br from-muted/10 to-background">
       <div className="container mx-auto">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-gradient-primary mb-2">
+          <h2 className="text-2xl md:text-3xl font-bold font-display text-gradient-primary mb-2">
             Latest News
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-base">
             Stay updated with the latest from Uganda Premier League
           </p>
         </div>

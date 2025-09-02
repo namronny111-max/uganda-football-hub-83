@@ -138,11 +138,11 @@ const LeagueTable = () => {
     <section className="py-12 bg-gradient-to-br from-background to-muted/20">
       <div className="container mx-auto">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-gradient-primary mb-2 flex items-center justify-center">
-            <Trophy className="h-8 w-8 mr-3" />
+          <h2 className="text-2xl md:text-3xl font-bold font-display text-gradient-primary mb-2 flex items-center justify-center">
+            <Trophy className="h-6 w-6 mr-2" />
             League Table
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-base">
             StarTimes Uganda Premier League 2025/26 Season
           </p>
         </div>

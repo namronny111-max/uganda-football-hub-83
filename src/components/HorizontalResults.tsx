@@ -43,10 +43,10 @@ const HorizontalResults = () => {
     <div className="bg-muted/30 border-b border-border">
       <div className="container mx-auto">
         <div className="flex items-center py-3">
-          <div className="flex items-center space-x-2 mr-6">
-            <h3 className="text-sm font-semibold font-display">Latest Results</h3>
-            <Badge variant="secondary" className="text-xs">Live</Badge>
-          </div>
+            <div className="flex items-center space-x-2 mr-4">
+              <h3 className="text-sm font-semibold font-display">Latest Results</h3>
+              <Badge variant="secondary" className="text-xs">Live</Badge>
+            </div>
           
           <div className="flex-1 overflow-hidden">
             <div className="flex items-center space-x-6 animate-scroll-horizontal">
