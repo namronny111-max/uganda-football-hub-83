@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Calendar, Search, Filter, Clock, MapPin, Trophy, ChevronLeft, ChevronRight } from "lucide-react";
+import { Calendar, Search, Filter, Clock, MapPin, Trophy, ChevronDown } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -32,7 +32,6 @@ const Fixtures = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCompetition, setSelectedCompetition] = useState("all");
   const [selectedStatus, setSelectedStatus] = useState("all");
-  const [selectedWeek, setSelectedWeek] = useState("current");
 
   const mockFixtures: Match[] = [
     {
@@ -166,161 +165,160 @@ const Fixtures = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Gradient Hero Header */}
-      <div className="relative bg-gradient-to-r from-primary via-primary-glow to-primary-accent text-white">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative container mx-auto px-6 sm:px-8 lg:px-16 xl:px-24 py-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-2">Matches</h1>
-        </div>
-      </div>
-      
-      <main className="container mx-auto px-6 sm:px-8 lg:px-16 xl:px-24 py-8">
-        {/* Compact Filters */}
-        <div className="flex flex-wrap items-center gap-3 mb-8">
-          <Select value={selectedCompetition} onValueChange={setSelectedCompetition}>
-            <SelectTrigger className="w-48 h-9 text-sm">
-              <SelectValue placeholder="Premier League" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All Competitions</SelectItem>
-              <SelectItem value="Uganda Premier League">Uganda Premier League</SelectItem>
-              <SelectItem value="CAF Champions League">CAF Champions League</SelectItem>
-              <SelectItem value="Uganda Cup">Uganda Cup</SelectItem>
-            </SelectContent>
-          </Select>
-
-          <Select value="2025/26" onValueChange={() => {}}>
-            <SelectTrigger className="w-24 h-9 text-sm">
-              <SelectValue placeholder="2025/26" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="2025/26">2025/26</SelectItem>
-              <SelectItem value="2024/25">2024/25</SelectItem>
-            </SelectContent>
-          </Select>
-
-          <Select value={selectedWeek} onValueChange={setSelectedWeek}>
-            <SelectTrigger className="w-32 h-9 text-sm">
-              <SelectValue placeholder="Matchweek 2" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="current">Matchweek 2</SelectItem>
-              <SelectItem value="1">Matchweek 1</SelectItem>
-              <SelectItem value="3">Matchweek 3</SelectItem>
-            </SelectContent>
-          </Select>
-
-          <Select value={selectedStatus} onValueChange={setSelectedStatus}>
-            <SelectTrigger className="w-20 h-9 text-sm">
-              <SelectValue placeholder="Clubs" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All</SelectItem>
-              <SelectItem value="live">Live</SelectItem>
-              <SelectItem value="upcoming">Upcoming</SelectItem>
-              <SelectItem value="completed">Completed</SelectItem>
-            </SelectContent>
-          </Select>
-
-          <Button variant="outline" size="sm" className="h-9 px-3 text-sm">
-            Reset
-          </Button>
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-8">
+        {/* Hero Section */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-primary mb-4">
+            Fixtures & Results
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Stay up to date with all upcoming matches, live scores, and recent results from the Uganda Premier League
+          </p>
         </div>
 
-        {/* Week Navigation */}
-        <div className="flex items-center justify-center mb-8">
-          <Button variant="ghost" size="sm" className="p-2">
-            <ChevronLeft className="w-4 h-4" />
-          </Button>
-          <div className="mx-8 text-center">
-            <h2 className="text-lg font-semibold">Matchweek 2</h2>
-            <p className="text-sm text-muted-foreground">Fri 22 Aug - Mon 25 Aug</p>
-          </div>
-          <Button variant="ghost" size="sm" className="p-2">
-            <ChevronRight className="w-4 h-4" />
-          </Button>
-          <Button variant="ghost" size="sm" className="ml-8 text-sm">
-            See all →
-          </Button>
-        </div>
+        {/* Filters */}
+        <Card className="mb-8 card-uganda">
+          <CardContent className="p-6">
+            <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center">
+              <div className="relative flex-1 min-w-0">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+                <Input
+                  placeholder="Search teams, venues..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="pl-10 h-11"
+                />
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                <Select value={selectedCompetition} onValueChange={setSelectedCompetition}>
+                  <SelectTrigger className="w-full sm:w-56">
+                    <Trophy className="w-4 h-4 mr-2" />
+                    <SelectValue placeholder="Competition" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">All Competitions</SelectItem>
+                    <SelectItem value="Uganda Premier League">Uganda Premier League</SelectItem>
+                    <SelectItem value="CAF Champions League">CAF Champions League</SelectItem>
+                    <SelectItem value="Uganda Cup">Uganda Cup</SelectItem>
+                  </SelectContent>
+                </Select>
+
+                <Select value={selectedStatus} onValueChange={setSelectedStatus}>
+                  <SelectTrigger className="w-full sm:w-44">
+                    <Filter className="w-4 h-4 mr-2" />
+                    <SelectValue placeholder="Status" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">All Matches</SelectItem>
+                    <SelectItem value="live">Live</SelectItem>
+                    <SelectItem value="upcoming">Upcoming</SelectItem>
+                    <SelectItem value="completed">Completed</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Fixtures List */}
         {groupedFixtures.length > 0 ? (
           <div className="space-y-8">
             {groupedFixtures.map(([date, matches]) => (
-              <div key={date} className="space-y-1">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-base font-medium text-foreground">
+              <div key={date} className="space-y-4">
+                <div className="flex items-center gap-3 mb-6">
+                  <Calendar className="w-5 h-5 text-primary" />
+                  <h2 className="text-xl font-bold text-foreground">
                     {formatDate(date)}
-                  </h3>
-                  <Button variant="ghost" size="sm" className="text-sm text-muted-foreground hover:text-foreground">
-                    See all →
-                  </Button>
+                  </h2>
+                  <div className="flex-1 h-px bg-border"></div>
                 </div>
 
-                <div className="space-y-1">
+                <div className="grid gap-4">
                   {matches.map((match) => (
-                    <div key={match.id} className="bg-card hover:bg-muted/50 transition-colors rounded-lg p-4">
-                      <div className="flex items-center justify-between">
-                        {/* Status Badge */}
-                        <div className="flex items-center gap-2 min-w-[60px]">
-                          {match.status === "completed" ? (
-                            <span className="text-xs text-muted-foreground font-medium">FT</span>
-                          ) : match.status === "live" ? (
-                            <Badge variant="destructive" className="text-xs px-1.5 py-0.5">
-                              LIVE
-                            </Badge>
-                          ) : (
-                            <span className="text-xs text-muted-foreground font-medium">{match.time}</span>
-                          )}
-                        </div>
-
-                        {/* Teams and Score */}
-                        <div className="flex-1 flex items-center justify-center gap-6">
-                          <div className="flex items-center gap-2 min-w-[140px] justify-end">
-                            <span className="text-sm font-medium">{match.homeTeam}</span>
-                            <div className="w-6 h-6 bg-gradient-primary rounded-full flex items-center justify-center text-white text-xs font-bold">
-                              {match.homeTeam.charAt(0)}
+                    <Card key={match.id} className="card-uganda hover:shadow-primary transition-all duration-300">
+                      <CardContent className="p-6">
+                        <div className="flex flex-col lg:flex-row lg:items-center gap-4">
+                          {/* Match Info */}
+                          <div className="flex-1">
+                            <div className="flex items-center justify-between mb-3">
+                              <Badge variant="outline" className="text-xs">
+                                {match.competition}
+                              </Badge>
+                              {getStatusBadge(match)}
                             </div>
-                          </div>
 
-                          <div className="flex items-center gap-3">
-                            {match.status === "completed" || match.status === "live" ? (
-                              <div className="text-lg font-bold text-center">
-                                <span className="text-foreground">{match.homeScore}</span>
-                                <span className="text-muted-foreground mx-2">-</span>
-                                <span className="text-foreground">{match.awayScore}</span>
+                            {/* Teams */}
+                            <div className="flex items-center justify-between gap-4 mb-4">
+                              <div className="flex items-center gap-3 flex-1">
+                                <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center text-white text-sm font-bold">
+                                  {match.homeTeam.charAt(0)}
+                                </div>
+                                <span className="font-semibold text-foreground">
+                                  {match.homeTeam}
+                                </span>
                               </div>
-                            ) : (
-                              <div className="text-sm text-muted-foreground font-medium">vs</div>
-                            )}
+
+                              <div className="flex items-center gap-2 px-4">
+                                {match.status === "completed" || match.status === "live" ? (
+                                  <div className="text-2xl font-bold text-primary">
+                                    {match.homeScore} - {match.awayScore}
+                                  </div>
+                                ) : (
+                                  <div className="text-lg font-medium text-muted-foreground">
+                                    VS
+                                  </div>
+                                )}
+                              </div>
+
+                              <div className="flex items-center gap-3 flex-1 justify-end">
+                                <span className="font-semibold text-foreground text-right">
+                                  {match.awayTeam}
+                                </span>
+                                <div className="w-8 h-8 bg-gradient-accent rounded-full flex items-center justify-center text-white text-sm font-bold">
+                                  {match.awayTeam.charAt(0)}
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Venue */}
+                            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                              <MapPin className="w-4 h-4" />
+                              <span>{match.venue}</span>
+                            </div>
                           </div>
 
-                          <div className="flex items-center gap-2 min-w-[140px] justify-start">
-                            <div className="w-6 h-6 bg-gradient-accent rounded-full flex items-center justify-center text-white text-xs font-bold">
-                              {match.awayTeam.charAt(0)}
-                            </div>
-                            <span className="text-sm font-medium">{match.awayTeam}</span>
+                          {/* Action Button */}
+                          <div className="lg:ml-6">
+                            <Button 
+                              variant="outline" 
+                              size="sm"
+                              className="w-full lg:w-auto hover:bg-primary hover:text-primary-foreground transition-colors"
+                            >
+                              View Details
+                              <ChevronDown className="w-4 h-4 ml-2" />
+                            </Button>
                           </div>
                         </div>
-
-                        {/* Empty space for alignment */}
-                        <div className="min-w-[60px]"></div>
-                      </div>
-                    </div>
+                      </CardContent>
+                    </Card>
                   ))}
                 </div>
               </div>
             ))}
           </div>
         ) : (
-          <div className="text-center py-12">
-            <Calendar className="w-16 h-16 mx-auto text-muted-foreground/50 mb-4" />
-            <h3 className="text-lg font-semibold mb-2">No fixtures found</h3>
-            <p className="text-sm text-muted-foreground">
-              Try adjusting your search criteria or filters
-            </p>
-          </div>
+          <Card className="text-center py-12">
+            <CardContent>
+              <div className="text-muted-foreground mb-4">
+                <Calendar className="w-16 h-16 mx-auto text-muted-foreground/50" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">No fixtures found</h3>
+              <p className="text-muted-foreground">
+                Try adjusting your search criteria or filters
+              </p>
+            </CardContent>
+          </Card>
         )}
       </main>
 
