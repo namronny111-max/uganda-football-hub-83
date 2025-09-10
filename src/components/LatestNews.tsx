@@ -21,11 +21,11 @@ const LatestNews = () => {
   const newsArticles: NewsArticle[] = [
     {
       id: 1,
-      title: "Fixtures for 2025/26 Season Released",
-      excerpt: "The StarTimes Uganda Premier League 2025/26 season fixtures have officially been released with Round 1 scheduled to run from 26th September 2025 to 14th February 2026.",
-      author: "Bonaventure Binoti Ewo",
+      title: "Uganda Cranes Qualify for AFCON 2025",
+      excerpt: "The Uganda national team has successfully secured their place in the 2025 Africa Cup of Nations with a decisive victory in the final qualifying match.",
+      author: "FUFA Communications",
       date: "29/08/2025",
-      category: "FIXTURES",
+      category: "NATIONAL TEAM",
       image: heroImage,
       readTime: "3 min read",
       views: 1250,
@@ -33,11 +33,11 @@ const LatestNews = () => {
     },
     {
       id: 2,
-      title: "Villa, URA earn first leg advantage in Fufa Super 8",
-      excerpt: "SC Villa and URA FC secured important first leg advantages in their respective FUFA Super 8 semi-final encounters, setting up exciting return fixtures.",
-      author: "Ismael Kiyonga",
+      title: "FUFA Women's League Gets Major Boost",
+      excerpt: "The Federation announces significant investment in women's football with league expansion, new clubs, and enhanced development programs across the country.",
+      author: "FUFA Development",
       date: "28/08/2025",
-      category: "MATCH REPORT",
+      category: "DEVELOPMENT",
       image: heroImage,
       readTime: "4 min read",
       views: 980,
@@ -45,44 +45,44 @@ const LatestNews = () => {
     },
     {
       id: 3,
-      title: "Onyango back as Put names 2026 FWCQ squad",
-      excerpt: "Captain Denis Onyango returns to the Uganda Cranes squad as coach Milutin Sredojevic names his team for the upcoming 2026 FIFA World Cup qualifiers.",
-      author: "Andrew Mwanguhya",
+      title: "New Regional Development Centers Launch",
+      excerpt: "FUFA officially opens five new regional development centers aimed at nurturing young talent and promoting grassroots football development nationwide.",
+      author: "FUFA Communications",
       date: "27/08/2025",
-      category: "INTERNATIONAL",
+      category: "GRASSROOTS",
       image: heroImage,
       readTime: "5 min read",
       views: 1450
     },
     {
       id: 4,
-      title: "Transfer Deadline Day: All the Moves",
-      excerpt: "A comprehensive roundup of all the last-minute transfers and signings across Uganda Premier League clubs on deadline day.",
-      author: "Sarah Nakitto",
+      title: "FUFA Strategic Plan 2024-2028 Unveiled",
+      excerpt: "The Federation presents its comprehensive four-year strategic plan focusing on infrastructure development, talent nurturing, and football governance improvements.",
+      author: "FUFA Executive",
       date: "26/08/2025",
-      category: "TRANSFERS",
+      category: "GOVERNANCE",
       image: heroImage,
       readTime: "6 min read",
       views: 890
     },
     {
       id: 5,
-      title: "Youth Development: UPL's Future Stars",
-      excerpt: "Meet the promising young talents making their mark in Uganda's top flight and what the future holds for local football.",
-      author: "David Isabirye",
+      title: "Referee Development Program Launched",
+      excerpt: "FUFA introduces comprehensive training program for match officials aimed at improving officiating standards across all levels of Ugandan football.",
+      author: "FUFA Technical",
       date: "25/08/2025",
-      category: "YOUTH",
+      category: "OFFICIALS",
       image: heroImage,
       readTime: "4 min read",
       views: 650
     },
     {
       id: 6,
-      title: "Stadium Infrastructure Updates Across Uganda",
-      excerpt: "Latest developments in stadium infrastructure improvements and their impact on the Uganda Premier League experience.",
-      author: "Grace Nakimuli",
+      title: "Community Football Initiative Expansion",
+      excerpt: "FUFA partners with local communities to establish grassroots football programs in rural areas, promoting inclusivity and talent discovery.",
+      author: "FUFA Community",
       date: "24/08/2025",
-      category: "INFRASTRUCTURE",
+      category: "COMMUNITY",
       image: heroImage,
       readTime: "3 min read",
       views: 420
@@ -91,11 +91,12 @@ const LatestNews = () => {
 
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case 'FIXTURES': return 'bg-accent text-accent-foreground';
-      case 'MATCH REPORT': return 'bg-primary text-primary-foreground';
-      case 'INTERNATIONAL': return 'bg-success text-success-foreground';
-      case 'TRANSFERS': return 'bg-warning text-warning-foreground';
-      case 'YOUTH': return 'bg-secondary text-secondary-foreground';
+        case 'NATIONAL TEAM': return 'bg-primary text-primary-foreground';
+        case 'DEVELOPMENT': return 'bg-accent text-accent-foreground';
+        case 'GRASSROOTS': return 'bg-success text-success-foreground';
+        case 'GOVERNANCE': return 'bg-secondary text-secondary-foreground';
+        case 'OFFICIALS': return 'bg-warning text-warning-foreground';
+        case 'COMMUNITY': return 'bg-fufa-red text-white';
       default: return 'bg-muted text-muted-foreground';
     }
   };
@@ -108,10 +109,10 @@ const LatestNews = () => {
       <div className="container mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold font-display text-gradient-primary mb-2">
-            Latest News
+            Latest News & Media
           </h2>
           <p className="text-muted-foreground text-base">
-            Stay updated with the latest from Uganda Premier League
+            Stay updated with the latest developments in Ugandan football
           </p>
         </div>
 
@@ -230,7 +231,7 @@ const LatestNews = () => {
             Never Miss a Story
           </h3>
           <p className="text-muted-foreground mb-6">
-            Get the latest Uganda Premier League news delivered straight to your inbox
+            Get the latest FUFA news and football developments delivered straight to your inbox
           </p>
           <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input 

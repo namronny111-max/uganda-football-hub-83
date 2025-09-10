@@ -33,30 +33,30 @@ const HeroSection = () => {
   const newsSlides: NewsSlide[] = [
     {
       id: 1,
-      title: "2025/26 Season Fixtures Released", 
-      subtitle: "Round 1 starts September 26th",
-      description: "The StarTimes Uganda Premier League 2025/26 season fixtures have officially been released with exciting matchups planned.",
+      title: "Uganda Cranes Qualify for AFCON 2025", 
+      subtitle: "Historic qualification secured",
+      description: "The Uganda National Team has successfully qualified for the 2025 Africa Cup of Nations after a decisive victory in the final qualifier.",
       image: heroImage,
-      category: "FIXTURES",
+      category: "NATIONAL TEAM",
       date: "29/08/2025",
       isBreaking: true
     },
     {
       id: 2,
-      title: "Villa and URA Advance in FUFA Super 8",
-      subtitle: "First leg advantage secured",
-      description: "SC Villa and URA FC earned crucial first leg advantages in the ongoing FUFA Super 8 competition.",
+      title: "FUFA Women's League Expansion",
+      subtitle: "Major investment in women's football",
+      description: "FUFA announces significant expansion of the women's league with new clubs and enhanced development programs.",
       image: heroImage,
-      category: "MATCH REPORT",
+      category: "DEVELOPMENT",
       date: "28/08/2025"
     },
     {
       id: 3,
-      title: "Onyango Returns to National Squad",
-      subtitle: "2026 World Cup Qualifiers",
-      description: "Captain Denis Onyango has been recalled to the Uganda Cranes squad for the upcoming World Cup qualifiers.",
+      title: "New Football Development Centers",
+      subtitle: "Grassroots program expansion",
+      description: "FUFA opens five new regional development centers to nurture young talent and promote football across Uganda.",
       image: heroImage,
-      category: "INTERNATIONAL",
+      category: "GRASSROOTS",
       date: "27/08/2025"
     }
   ];
@@ -156,7 +156,7 @@ const HeroSection = () => {
                 Read Full Story
               </Button>
               <Button variant="outline" size="sm" className="border-primary text-primary hover:bg-primary/10">
-                Watch Highlights
+                View Programs
               </Button>
             </div>
 
@@ -202,7 +202,7 @@ const HeroSection = () => {
             <div className="card-uganda p-6 space-y-4">
               <h3 className="text-lg font-bold font-display text-gradient-accent flex items-center">
                 <Calendar className="h-4 w-4 mr-2" />
-                Upcoming Fixtures
+                Upcoming Matches
               </h3>
               
               <div className="space-y-3">
@@ -241,7 +241,7 @@ const HeroSection = () => {
               </div>
 
               <Button variant="outline" className="w-full mt-4">
-                View All Fixtures
+                View All Matches
               </Button>
             </div>
           </div>

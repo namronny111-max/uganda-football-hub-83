@@ -140,10 +140,10 @@ const LeagueTable = () => {
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold font-display text-gradient-primary mb-2 flex items-center justify-center">
             <Trophy className="h-6 w-6 mr-2" />
-            League Table
+            Competition Standings
           </h2>
           <p className="text-muted-foreground text-base">
-            StarTimes Uganda Premier League 2025/26 Season
+            FUFA Competition Standings 2025/26 Season
           </p>
         </div>
 

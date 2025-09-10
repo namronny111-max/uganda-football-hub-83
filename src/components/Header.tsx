@@ -3,19 +3,20 @@ import { Link } from "react-router-dom";
 import { Menu, X, Search, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import uplLogo from "@/assets/upl-logo.png";
+import fufaLogo from "@/assets/fufa-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigationItems = [
     { name: "Home", href: "/" },
-    { name: "Fixtures", href: "/fixtures" },
-    { name: "Results", href: "/results" },
-    { name: "League Table", href: "/table" },
+    { name: "National Teams", href: "/national-teams" },
+    { name: "Competitions", href: "/competitions" },
+    { name: "Fixtures & Results", href: "/fixtures" },
     { name: "Clubs", href: "/clubs" },
-    { name: "Players", href: "/players" },
-    { name: "News", href: "/news" },
+    { name: "Development", href: "/development" },
+    { name: "News & Media", href: "/news" },
+    { name: "Governance", href: "/governance" },
     { name: "Statistics", href: "/statistics" },
     { name: "Live", href: "/live", isLive: true },
   ];
@@ -26,11 +27,12 @@ const Header = () => {
         {/* Top social bar */}
         <div className="flex items-center justify-between py-2 text-xs border-b border-border/50">
           <div className="flex items-center space-x-4 text-muted-foreground">
-            <span>Follow UPL:</span>
+            <span>Follow FUFA:</span>
             <div className="flex space-x-2">
               <a href="#" className="hover:text-primary transition-colors">Twitter</a>
+              <a href="#" className="hover:text-primary transition-colors">Facebook</a>
               <a href="#" className="hover:text-primary transition-colors">Instagram</a>
-              <a href="#" className="hover:text-primary transition-colors">TikTok</a>
+              <a href="#" className="hover:text-primary transition-colors">YouTube</a>
             </div>
           </div>
           <div className="flex items-center space-x-4">
@@ -49,12 +51,12 @@ const Header = () => {
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <img src={uplLogo} alt="UPL Logo" className="h-12 w-12" />
+            <img src={fufaLogo} alt="FUFA Logo" className="h-12 w-12" />
             <div className="hidden sm:block">
               <h1 className="text-lg font-bold font-display text-gradient-primary">
-                Uganda Premier League
+                FUFA
               </h1>
-              <p className="text-xs text-muted-foreground">StarTimes Uganda Premier League</p>
+              <p className="text-xs text-muted-foreground">Federation of Uganda Football Associations</p>
             </div>
           </Link>
 

@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Uganda Premier League Design System - African Football Vibrancy Meets Modern Professionalism
-All colors MUST be HSL. Inspired by Ugandan flag colors with dark sophisticated base.
+/* FUFA Design System - Federation of Uganda Football Associations
+All colors MUST be HSL. Inspired by FUFA branding and Ugandan flag colors with professional blue accents.
 */
 
 @layer base {
@@ -19,19 +19,24 @@ All colors MUST be HSL. Inspired by Ugandan flag colors with dark sophisticated 
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 
-    /* Primary - Ugandan Red (from flag) */
-    --primary: 0 84% 55%;
+    /* Primary - FUFA Blue (from logo) */
+    --primary: 224 100% 45%;
     --primary-foreground: 210 40% 98%;
-    --primary-glow: 0 100% 70%;
+    --primary-glow: 224 100% 60%;
 
-    /* Secondary - Light variant */
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 240 10% 3.9%;
+    /* Secondary - Ugandan Red (heritage) */
+    --secondary: 0 84% 55%;
+    --secondary-foreground: 210 40% 98%;
 
     /* Ugandan Yellow (from flag) */
     --accent: 45 98% 55%;
     --accent-foreground: 240 10% 3.9%;
     --accent-glow: 45 100% 65%;
+
+    /* FUFA brand colors */
+    --fufa-red: 0 84% 55%;
+    --fufa-blue: 224 100% 45%;
+    --fufa-yellow: 45 98% 55%;
 
     /* Muted colors for subtle elements */
     --muted: 210 40% 98%;
@@ -52,11 +57,12 @@ All colors MUST be HSL. Inspired by Ugandan flag colors with dark sophisticated 
     --input: 214.3 31.8% 91.4%;
     --ring: 0 84% 55%;
 
-    /* Gradients for modern appeal */
+    /* Gradients for modern FUFA appeal */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100% / 0.8), hsl(0 0% 100% / 0.9)), linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--accent) / 0.1));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(0 0% 98%));
+    --gradient-fufa: linear-gradient(135deg, hsl(var(--fufa-blue)), hsl(var(--fufa-red)), hsl(var(--fufa-yellow)));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100% / 0.9), hsl(224 100% 45% / 0.05)), linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--accent) / 0.1));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(224 20% 98%));
 
     /* Shadows with African warmth */
     --shadow-primary: 0 10px 30px -10px hsl(var(--primary) / 0.4);
@@ -98,7 +104,7 @@ All colors MUST be HSL. Inspired by Ugandan flag colors with dark sophisticated 
     --popover: 210 40% 98%;
     --popover-foreground: 222 84% 4.9%;
 
-    --primary: 0 84% 55%;
+    --primary: 224 100% 45%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96%;
