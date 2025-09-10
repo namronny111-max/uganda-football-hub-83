@@ -109,17 +109,25 @@ const HeroSection = () => {
   const currentNews = newsSlides[currentSlide];
 
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden">
       <HorizontalResults />
-      <div className="relative min-h-[70vh] lg:min-h-[80vh] flex items-center">
-      {/* Hero Background */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${currentNews.image})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
-      </div>
+      <div className="relative min-h-[75vh] lg:min-h-[85vh] flex items-center">
+        {/* Modern Hero Background with floating elements */}
+        <div className="absolute inset-0">
+          {/* Primary background image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105 transition-transform duration-[10s] ease-out"
+            style={{ backgroundImage: `url(${currentNews.image})` }}
+          />
+          {/* Modern gradient overlays */}
+          <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/80 to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+          
+          {/* Floating geometric elements */}
+          <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute bottom-32 left-16 w-24 h-24 bg-gradient-to-br from-accent/30 to-primary/30 rounded-2xl rotate-45 blur-lg animate-bounce-subtle"></div>
+          <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-primary/10 rounded-full animate-pulse-glow"></div>
+        </div>
 
       <div className="container mx-auto relative z-10">
         <div className="grid lg:grid-cols-3 gap-8 items-center">
@@ -197,52 +205,79 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Upcoming Fixtures Sidebar */}
-          <div className="space-y-4">
-            <div className="card-uganda p-6 space-y-4">
-              <h3 className="text-lg font-bold font-display text-gradient-accent flex items-center">
-                <Calendar className="h-4 w-4 mr-2" />
-                Upcoming Matches
-              </h3>
-              
-              <div className="space-y-3">
-                {upcomingFixtures.map((fixture) => (
-                  <Card key={fixture.id} className="p-4 hover:bg-muted/50 transition-colors">
-                    <div className="space-y-2">
-                      <div className="flex justify-between items-center">
-                        <div className="text-sm font-medium">
-                          {fixture.homeTeam} vs {fixture.awayTeam}
+          {/* Modern Upcoming Matches Sidebar */}
+          <div className="space-y-6">
+            <div className="relative">
+              {/* Glassmorphism container */}
+              <div className="relative backdrop-blur-md bg-card/60 border border-primary/20 rounded-3xl p-6 shadow-elegant overflow-hidden">
+                {/* Subtle gradient background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none"></div>
+                
+                <div className="relative z-10 space-y-5">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-bold font-display text-gradient-primary flex items-center">
+                      <div className="p-2 bg-primary/10 rounded-xl mr-3">
+                        <Calendar className="h-4 w-4 text-primary" />
+                      </div>
+                      Next Matches
+                    </h3>
+                    <div className="w-8 h-1 bg-gradient-primary rounded-full"></div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    {upcomingFixtures.map((fixture, index) => (
+                      <div key={fixture.id} className="group relative">
+                        <div className="relative p-4 rounded-2xl bg-gradient-to-r from-card to-card/80 border border-border/50 transition-all duration-300 hover:shadow-primary/20 hover:shadow-lg hover:scale-[1.02]">
+                          {/* Match teams */}
+                          <div className="flex justify-between items-center mb-3">
+                            <div className="flex-1">
+                              <div className="text-sm font-semibold text-foreground/90 mb-1">
+                                {fixture.homeTeam}
+                              </div>
+                              <div className="text-xs text-muted-foreground">vs</div>
+                              <div className="text-sm font-semibold text-foreground/90">
+                                {fixture.awayTeam}
+                              </div>
+                            </div>
+                            {fixture.isLive && (
+                              <div className="flex items-center space-x-2">
+                                <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                                <span className="text-xs font-bold text-primary">LIVE</span>
+                              </div>
+                            )}
+                          </div>
+                          
+                          {/* Match details */}
+                          <div className="flex items-center justify-between text-xs text-muted-foreground">
+                            <div className="flex items-center space-x-3">
+                              <span className="flex items-center">
+                                <Calendar className="h-3 w-3 mr-1 text-primary/60" />
+                                {fixture.date}
+                              </span>
+                              <span className="flex items-center">
+                                <Clock className="h-3 w-3 mr-1 text-accent/60" />
+                                {fixture.time}
+                              </span>
+                            </div>
+                          </div>
+                          
+                          <div className="mt-2 flex items-center text-xs text-muted-foreground">
+                            <MapPin className="h-3 w-3 mr-1 text-secondary/60" />
+                            <span className="truncate">{fixture.venue}</span>
+                          </div>
+                          
+                          {/* Decorative line */}
+                          <div className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
                         </div>
-                        {fixture.isLive && (
-                          <span className="text-xs bg-primary text-primary-foreground px-2 py-1 rounded-full animate-pulse">
-                            LIVE
-                          </span>
-                        )}
                       </div>
-                      
-                      <div className="flex items-center text-xs text-muted-foreground space-x-3">
-                        <span className="flex items-center">
-                          <Calendar className="h-3 w-3 mr-1" />
-                          {fixture.date}
-                        </span>
-                        <span className="flex items-center">
-                          <Clock className="h-3 w-3 mr-1" />
-                          {fixture.time}
-                        </span>
-                      </div>
-                      
-                      <div className="flex items-center text-xs text-muted-foreground">
-                        <MapPin className="h-3 w-3 mr-1" />
-                        {fixture.venue}
-                      </div>
-                    </div>
-                  </Card>
-                ))}
-              </div>
+                    ))}
+                  </div>
 
-              <Button variant="outline" className="w-full mt-4">
-                View All Matches
-              </Button>
+                  <Button variant="outline" className="w-full mt-6 bg-gradient-to-r from-primary/5 to-accent/5 border-primary/30 hover:bg-primary/10 transition-all duration-300">
+                    View All Fixtures
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

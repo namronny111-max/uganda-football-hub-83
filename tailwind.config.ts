@@ -16,8 +16,8 @@ export default {
 				DEFAULT: '2rem',
 				sm: '3rem',
 				lg: '4rem',
-				xl: '6rem',
-				'2xl': '8rem'
+				xl: '5rem',
+				'2xl': '6rem'
 			},
 			screens: {
 				'2xl': '1400px'
