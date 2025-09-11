@@ -8,6 +8,9 @@ import LeagueTable from "./pages/LeagueTable";
 import Fixtures from "./pages/Fixtures";
 import Statistics from "./pages/Statistics";
 import Competitions from "./pages/Competitions";
+import NationalTeams from "./pages/NationalTeams";
+import Development from "./pages/Development";
+import News from "./pages/News";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +27,9 @@ const App = () => (
           <Route path="/fixtures" element={<Fixtures />} />
           <Route path="/statistics" element={<Statistics />} />
           <Route path="/competitions" element={<Competitions />} />
+          <Route path="/national-teams" element={<NationalTeams />} />
+          <Route path="/development" element={<Development />} />
+          <Route path="/news" element={<News />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

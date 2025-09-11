@@ -12,13 +12,11 @@ const Header = () => {
     { name: "Home", href: "/" },
     { name: "National Teams", href: "/national-teams" },
     { name: "Competitions", href: "/competitions" },
-    { name: "Fixtures & Results", href: "/fixtures" },
-    { name: "Clubs", href: "/clubs" },
+    { name: "Fixtures", href: "/fixtures" },
+    { name: "League Table", href: "/table" },
     { name: "Development", href: "/development" },
-    { name: "News & Media", href: "/news" },
-    { name: "Governance", href: "/governance" },
     { name: "Statistics", href: "/statistics" },
-    { name: "Live", href: "/live", isLive: true },
+    { name: "News", href: "/news" },
   ];
 
   return (
@@ -66,16 +64,9 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={cn(
-                  "nav-link px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300",
-                  item.isLive &&
-                    "bg-gradient-primary text-primary-foreground animate-pulse-glow font-bold"
-                )}
+                className="nav-link px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300"
               >
                 {item.name}
-                {item.isLive && (
-                  <span className="ml-1 inline-block w-2 h-2 bg-accent rounded-full animate-pulse" />
-                )}
               </Link>
             ))}
           </nav>
@@ -100,19 +91,9 @@ const Header = () => {
                   key={item.name}
                   to={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className={cn(
-                    "px-4 py-3 text-sm font-medium rounded-lg transition-all duration-300",
-                    "hover:bg-primary/10 hover:text-primary",
-                    item.isLive &&
-                      "bg-gradient-primary text-primary-foreground animate-pulse-glow font-bold"
-                  )}
+                  className="px-4 py-3 text-sm font-medium rounded-lg transition-all duration-300 hover:bg-primary/10 hover:text-primary"
                 >
-                  <span className="flex items-center justify-between">
-                    {item.name}
-                    {item.isLive && (
-                      <span className="inline-block w-2 h-2 bg-accent rounded-full animate-pulse" />
-                    )}
-                  </span>
+                  {item.name}
                 </Link>
               ))}
             </nav>
